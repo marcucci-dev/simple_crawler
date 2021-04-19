@@ -1,17 +1,16 @@
 import requests
-# from imgurpython import ImgurClient
-
 
 # example:
 # https://pixabay.com/api/?key=XXX&q=yellow+flowers&image_type=photo&pretty=true
 
+# TODO: write a simple function to
 # get key from my local txt file
-client_key = 'XXX' Get your key after registering on pixabay.com
 
+# Replace XXX with your personal key
+client_key = 'XXX'  # Get your key after registering on pixabay.com
 
 
 def get_images_urls(number_images=20, query=None, images_per_page=20):  # , page=1, per_page=20):
-    # request_string 
     request_string = "https://pixabay.com/api/?key="+client_key+"&q=yellow+flowers&image_type=photo&pretty=true"
     request_string += "&per_page="+str(images_per_page)
     print(request_string)
@@ -44,9 +43,15 @@ def get_images_urls(number_images=20, query=None, images_per_page=20):  # , page
         
     return images_urls
 
-#"total": 4692,
+# "total": 4692,
 #	"totalHits": 500,
 #	"hits": [
 
+def main():
 
-print("Result: ", get_images_urls(images_per_page=30))
+    print("Result: ", get_images_urls(images_per_page=30))
+    
+    
+    
+if __name__ == "__main__":
+    main()
