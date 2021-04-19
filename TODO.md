@@ -12,7 +12,7 @@
 
 #### 1. Ottenere la lista degli url delle immagini da scaricare
 - rendere più parametrica la funzione
-- controllare di non superare il numero totale dei link disponibili per quella query (è nel campo "total" della response)
+- controllare di non superare il numero totale dei link disponibili per quella query (è nel campo "totalHits" della response)
 - NOTA: se si vogliono scaricare più di 200 immagini
     - API di pixabay ha limite di 200 link per pagina: aggiustare, scaricando più di una pagina, in modo da superare tale limite
     
