@@ -1,7 +1,7 @@
 ## TODO
 
 ### Input da file locale `config.py`
-1. api key **[DONE]**
+1. **[DONE]** api key 
 2. path della directory in cui scaricare i file (output)
  
 ### Input dall'utente run-time:
@@ -12,14 +12,14 @@
 
 #### 1. Ottenere la lista degli url delle immagini da scaricare
 - rendere più parametrica la funzione
-- controllare di non superare il numero totale dei link disponibili per quella query (è nel campo "totalHits" della response)
+- **[DONE]** controllare di non superare il numero totale dei link disponibili per quella query (è nel campo "totalHits" della response)
 - NOTA: se si vogliono scaricare più di 200 immagini
     - API di pixabay ha limite di 200 link per pagina: aggiustare, scaricando più di una pagina, in modo da superare tale limite
     
 #### 2. Definire cosa fa ogni singolo thread in una funzione:
-- ottenere il link dalla lista
+- ottenere un link dalla lista immagini ancora da scaricare
 - scaricare il file immagine dal link
-- salvandolo nella directory stabilita
+- salvarlo nella directory stabilita
     
 #### 3. Gestire i thread
     
