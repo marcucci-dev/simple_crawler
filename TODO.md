@@ -10,7 +10,7 @@
 3. max number of threads
 
 
-#### 1. Ottenere la lista degli url delle immagini da scaricare
+#### 1. Ottenere la lista degli url delle immagini da scaricare (`get_images_urls` function)
 - rendere più parametrica la funzione
 - **[DONE]** controllare di non superare il numero totale dei link disponibili per quella query (è nel campo "totalHits" della response)
 - NOTA: se si vogliono scaricare più di 200 immagini
