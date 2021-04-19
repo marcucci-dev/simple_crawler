@@ -1,17 +1,13 @@
 import requests
 
+from config import api_key
+
 # example:
 # https://pixabay.com/api/?key=XXX&q=yellow+flowers&image_type=photo&pretty=true
 
-# TODO: write a simple function to
-# get key from my local txt file
-
-# Replace XXX with your personal key
-client_key = 'XXX'  # Get your key after registering on pixabay.com
-
 
 def get_images_urls(number_images=20, query=None, images_per_page=20):  # , page=1, per_page=20):
-    request_string = "https://pixabay.com/api/?key="+client_key+"&q=yellow+flowers&image_type=photo&pretty=true"
+    request_string = "https://pixabay.com/api/?key="+api_key+"&q=yellow+flowers&image_type=photo&pretty=true"
     request_string += "&per_page="+str(images_per_page)
     print(request_string)
     r = requests.get(request_string)
