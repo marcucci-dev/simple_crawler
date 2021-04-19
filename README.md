@@ -1,5 +1,5 @@
 # simple_crawler
-Exercise involving a multiple image download using threads concurrency
+Exercise involving a multiple images download using threads concurrency
 
 ## Quick start
 Create local `config.py` file containing the following line:
