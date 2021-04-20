@@ -1,19 +1,20 @@
 from pixabay_connection import get_images_urls
 from download_images import persist_image
 from threading import Thread, Lock
+import os
 import concurrent.futures
 
 
-def thread_get_images(nums: int, local_path: str) -> list:
+def thread_get_images(number_images: int, query: str, local_path: str, max_workers: int) -> list:
 
     threads = []
-    url = get_images_urls(number_images=nums)
-    for i in range(nums):
+    url = get_images_urls(number_images, query)
+    for i in range(number_images):
         t = Thread(target=persist_image, args=(local_path, url[i]))
         threads.append(t)
         t.start()
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers) as executor:
         executor.submit(threads)
 
     # for t in threads:
@@ -21,8 +22,8 @@ def thread_get_images(nums: int, local_path: str) -> list:
 
 
 def main():
-    path = r".\saved"
-    thread_get_images(10, path)
+    local_path = os.path.abspath("/images")
+    thread_get_images(10, "flower", local_path, 10)
 
 
 if __name__ == "__main__":
