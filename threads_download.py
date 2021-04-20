@@ -22,7 +22,7 @@ def thread_get_images(nums: int, local_path: str) -> list:
 
 
 def main():
-    path = r"C:\Users\cicci\OneDrive\Desktop\Tomorrowdevs\Studio_Python\threads\simple_crawler\saved"
+    path = r".\saved"
     thread_get_images(50, path)
 
 
