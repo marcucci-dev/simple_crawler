@@ -29,7 +29,7 @@ def main():
         print("Impossible to select a value higher than 200")
 
     # Save the images in downloads folder
-    folder = "downloads"
+    folder = "download"
     
     # Call thread_get_images and start downloading
     thread_get_images(number_images, query, folder, workers)
