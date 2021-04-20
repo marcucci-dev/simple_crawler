@@ -5,7 +5,7 @@ import os
 import concurrent.futures
 
 
-def thread_get_images(number_images: int, query: str, local_path: str, max_workers: int) -> list:
+def thread_get_images(number_images: int, query: str, local_path: str, max_worker: int) -> list:
 
     threads = []
     url = get_images_urls(number_images, query)
@@ -14,7 +14,7 @@ def thread_get_images(number_images: int, query: str, local_path: str, max_worke
         threads.append(t)
         t.start()
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_worker) as executor:
         executor.submit(threads)
 
     # for t in threads:

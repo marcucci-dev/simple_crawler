@@ -13,11 +13,14 @@ def main():
     folder = input("Insert the name of the folder where you want to save images: ")
 
     # Choose the max number of threads at work
-    max_workers = int(input("How many threads are working? "))
+    max_worker = int(input("How many threads are working? "))
+    if max_worker > 200:
+        max_worker = 200
+        print("Impossible to select a value higher than 200")
 
     # Call thread_get_images and start downloading
-    local_path = os.path.abspath("/" + folder)
-    thread_get_images(number_images, query, local_path, max_workers)
+    local_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), folder)
+    thread_get_images(number_images, query, local_path, max_worker)
 
 # Call the main function
 if __name__ == "__main__":
