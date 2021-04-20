@@ -2,16 +2,11 @@ import hashlib
 import io
 import os
 import threading
-from threading import Lock
 import requests
 from PIL import Image
 
-lock = Lock()
-
 
 def persist_image(folder_path: str, url: str):
-    global lock
-    lock.acquire()
     try:
         image_content = requests.get(url).content
 
@@ -27,7 +22,3 @@ def persist_image(folder_path: str, url: str):
         print(f"SUCCESS - saved {url} - as {file_path}")
     except Exception as e:
         print(f"ERROR - Could not save {url} - {e}")
-
-    lock.release()
-
-
