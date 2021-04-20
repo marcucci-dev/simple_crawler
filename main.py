@@ -6,8 +6,21 @@ def main():
     # Choose the number of images to download
     number_images = int(input("How many images you want to download? "))
 
-    # Choose the content of the images
-    query = input("What's the subject of your images? ")
+    # Choose the content of the images with an appropriate keyword
+    key_words = []
+    key_word = input("What's the subject of your images? ")
+    # Store all keywords in a list
+    while key_word != "":
+        key_words.append(key_word)
+        key_word = input("Other? ")
+    
+    # Form the query string with all the key words
+    query = ""
+    for i in range(len(key_words)):
+        query += key_words[i]
+        # Each keyword is joined with "+"
+        if i <= len(key_words) - 2:
+            query += "+"
 
     # Name the folder where saving the images
     folder = input("Insert the name of the folder where you want to save images: ")
