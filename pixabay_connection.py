@@ -31,8 +31,8 @@ def get_images_urls(number_images=20, query='yellow+flowers'):
     if r.status_code == 200:  # 200: OK
 
         for index, item in enumerate(json_response["hits"]):
-            print("index:", index)
-            print("item:",  item)
+            # print("index:", index)
+            # print("item:",  item)
             images_urls.append(json_response["hits"][index]["largeImageURL"])
 
         # print(r.json()["total"])
@@ -43,7 +43,7 @@ def get_images_urls(number_images=20, query='yellow+flowers'):
 
 def main():
 
-    print("Result: ", get_images_urls(number_images=30))
+    print("Result: ", get_images_urls(number_images=10))
     
 
 if __name__ == "__main__":
