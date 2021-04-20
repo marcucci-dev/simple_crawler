@@ -13,17 +13,16 @@ def thread_get_images(nums: int, local_path: str) -> list:
         threads.append(t)
         t.start()
 
-    # with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-    #     for t in threads:
-    #         executor.submit(t)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        executor.submit(threads)
 
-    for t in threads:
-        t.join()
+    # for t in threads:
+    #     t.join()
 
 
 def main():
     path = r".\saved"
-    thread_get_images(50, path)
+    thread_get_images(10, path)
 
 
 if __name__ == "__main__":
