@@ -22,7 +22,7 @@ def thread_get_images(number_images: int, query: str, local_path: str, workers: 
 
 
 def main():
-    local_path = os.path.normpath(join(os.getcwd(), "download"))
+    local_path = os.path.normpath(os.path.join(os.getcwd(), "download"))
     thread_get_images(10, "flower", local_path, 10)
 
 
