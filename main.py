@@ -1,5 +1,5 @@
-from threads_download import thread_get_images
-from pixabay_connection import check_api_key
+from crawler.threads_download import thread_get_images
+from crawler.pixabay_connection import check_api_key
 
 
 def main():

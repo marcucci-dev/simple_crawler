@@ -1,12 +1,11 @@
 from threading import Thread
 import os
-import concurrent.futures
 from time import time
 from threading import BoundedSemaphore
 
-from pixabay_connection import get_images_urls
-from download_images import persist_image
-import semaphore
+from crawler.pixabay_connection import get_images_urls
+from crawler.download_images import persist_image
+from crawler import semaphore
 
 
 def thread_get_images(number_images: int, query: str, local_path: str, workers: int) -> list:
@@ -35,7 +34,7 @@ def thread_get_images(number_images: int, query: str, local_path: str, workers: 
 
 
 def main():
-    local_path = os.path.normpath(os.path.join(os.getcwd(), "download"))
+    local_path = os.path.normpath(os.path.join(os.getcwd(), "../download"))
     thread_get_images(10, "flower", local_path, 10)
 
 
