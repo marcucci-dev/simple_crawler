@@ -6,7 +6,7 @@ from config import api_key
 # https://pixabay.com/api/?key=XXX&q=yellow+flowers&image_type=photo&pretty=true
 
 
-def get_images_urls(number_images=20, query="yellow+flower"):
+def get_images_urls(number_images=20, query='yellow+flowers'):
 
     if number_images >= 200:
         images_per_page = 200
@@ -43,7 +43,7 @@ def get_images_urls(number_images=20, query="yellow+flower"):
 
 def main():
 
-    print("Result: ", get_images_urls())
+    print("Result: ", get_images_urls(number_images=10))
     
 
 if __name__ == "__main__":
