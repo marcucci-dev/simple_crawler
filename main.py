@@ -16,14 +16,9 @@ def main():
     while key_word != "":
         key_words.append(key_word)
         key_word = input("Other? ")
-    
+
     # Form the query string with all the key words
-    query = ""
-    for i in range(len(key_words)):
-        query += key_words[i]
-        # Each keyword is joined with "+"
-        if i <= len(key_words) - 2:
-            query += "+"
+    query = "+".join(key_words)
 
     # Choose the max number of threads at work
     workers = int(input("How many threads are working? "))
@@ -33,7 +28,7 @@ def main():
 
     # Save the images in downloads folder
     folder = "download"
-    
+
     # Call thread_get_images and start downloading
     thread_get_images(number_images, query, folder, workers)
 
