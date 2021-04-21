@@ -17,7 +17,8 @@ def thread_get_images(number_images: int, query: str, local_path: str, workers: 
 
     threads = []
     urls = get_images_urls(number_images, query)
-    for i in range(number_images):
+
+    for i in range(len(urls)):
         t = Thread(target=persist_image, args=(local_path, urls[i]))
         threads.append(t)
         t.start()
@@ -28,6 +29,8 @@ def thread_get_images(number_images: int, query: str, local_path: str, workers: 
 
     for t in threads:
         t.join()
+
+    print("Downloaded images: {}/{} ".format(len(urls), number_images))
 
     end = time()
     print("Elapsed time: ", end - begin)
