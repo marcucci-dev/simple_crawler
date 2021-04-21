@@ -4,7 +4,7 @@ import os
 import requests
 from PIL import Image
 
-import semaphore
+from crawler import semaphore
 
 
 def persist_image(folder_path: str, url: str):
