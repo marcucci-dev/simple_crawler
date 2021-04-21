@@ -1,8 +1,11 @@
-import os
-import threads_download
 from threads_download import thread_get_images
+from pixabay_connection import check_api_key
+
 
 def main():
+    # Warning the user if the api key has not been set
+    check_api_key()
+
     # Choose the number of images to download
     number_images = int(input("How many images you want to download? "))
 
@@ -33,6 +36,7 @@ def main():
     
     # Call thread_get_images and start downloading
     thread_get_images(number_images, query, folder, workers)
+
 
 # Call the main function
 if __name__ == "__main__":

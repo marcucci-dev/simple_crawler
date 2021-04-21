@@ -6,7 +6,19 @@ from config import api_key
 # https://pixabay.com/api/?key=XXX&q=yellow+flowers&image_type=photo&pretty=true
 
 
+def check_api_key():
+    """Warning the user if the api key has not been set """
+
+    if api_key == "XXX":
+        print("""PLEASE: customize your config.py file at the following line:
+            api_key = "XXX"
+        replacing XXX with your personal key obtained by registering on https://pixabay.com/it/accounts/register/""")
+        exit()
+
+
 def get_images_urls(number_images=20, query='yellow+flowers'):
+    # Warning the user if the api key has not been set
+    check_api_key()
 
     if number_images >= 200:
         images_per_page = 200
